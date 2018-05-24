@@ -68,13 +68,13 @@ def comment(id):
 
     return render_template('comment.html',comment_form=comment_form,pitch=pitch,vote_radio=vote_radio)
 
-@main.route('/update', methods=['POST'])
-def update():
-    pitch = Pitch.query.get(id)
-    pitch.upvotes = request.args.get('jsdata')
-    pitch.downvotes = request.args.get('jsdata')
+# @main.route('/update', methods=['POST'])
+# def update():
+#     pitch = Pitch.query.get(id)
+#     pitch.upvotes = request.args.get('jsdata')
+#     pitch.downvotes = request.args.get('jsdata')
 
-    return render_template('button.html', pitch=pitch)
+#     return render_template('button.html', pitch=pitch)
 
 
 @main.route('/user/<uname>')
