@@ -1,0 +1,39 @@
+{% extends 'base.html' %} {% block styles %} {{super()}} {{simple.css}} {{simple.js}} {% endblock %} {% block content %}
+<div class="container">
+    <div class="row">
+        <div class="panel-header">
+            {{pitch.title}}
+        </div>
+        <div class="panel-body">
+            <p>{{pitch.body}}</p>
+            <strong>{{pitch.author}}</strong>
+            <form action method="post" class='form' role='form'>
+                {{vote_radio.rating.label}}
+        </div>
+        <div class="row form-check form-check-inline ">
+            {{vote_radio.hidden_tag()}} {{vote_radio.rating(class_='form-check-input')}}
+        </div>
+    </div>
+    </form>
+    <form action method="post" class='form' role='form'>
+        <div class="row mt-3">
+            {{comment_form.title.label}}
+        </div>
+        <div class="row">
+            {{comment_form.hidden_tag()}} {{comment_form.title(class_='form-control')}}
+        </div>
+        <div class="row mt-3">
+            {{comment_form.comment.label}}
+        </div>
+        <div class="row">
+            {{comment_form.hidden_tag()}} {{comment_form.comment(class_='form-control', placeholder="Tell us what you think")}} {{ simplemde.load
+            }}
+        </div>
+        <div class="row mt-3">
+            {{comment_form.submit(class_="btn btn-outline-primary")}}
+        </div>
+    </form>
+    {{ simplemde.load }} {% endblock %}
+
+
+</div>
