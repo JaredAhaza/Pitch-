@@ -51,22 +51,22 @@ def new():
 
     return render_template('new.html', pitch_form=pitch_form)
 
-# @main.route('/comment/<int:id>', methods=['GET', 'POST'])
-# @login_required
-# def comment(id):
-#     comment_form = CommentForm()
-#     vote_radio = Vote()
-#     pitch = Pitch.query.get(id)
-#     if comment_form.validate_on_submit():
-#         title = comment_form.title.data
-#         comment = comment_form.comment.data
+@main.route('/comment/<int:id>', methods=['GET', 'POST'])
+@login_required
+def comment(id):
+    comment_form = CommentForm()
+    vote_radio = Vote()
+    pitch = Pitch.query.get(id)
+    if comment_form.validate_on_submit():
+        title = comment_form.title.data
+        comment = comment_form.comment.data
 
-#         new_comment = Comment(comment=comment,title=title,user=current_user)
-#         new_comment.save_comment()
-#         return redirect(url_for('main.index'))
+        new_comment = Comment(comment=comment,title=title,user=current_user)
+        new_comment.save_comment()
+        return redirect(url_for('main.index'))
 
 
-#     return render_template('comment.html',comment_form=comment_form,pitch=pitch,vote_radio=vote_radio)
+    return render_template('comment.html',comment_form=comment_form,pitch=pitch,vote_radio=vote_radio)
 
 @main.route('/update', methods=['POST'])
 def update():
