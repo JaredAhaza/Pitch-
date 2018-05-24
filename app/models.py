@@ -31,45 +31,45 @@ class User(UserMixin, db.Model):
     def __repr__(self):
         return f'Pitch {self.username}'
 
-class Pitch(db.Model):
-    '''
-    Defining a pitch
-    '''
-    __tablename__ = 'pitches'
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String)
-    body = db.Column(db.String)
-    author = db.Column(db.String)
-    category = db.Column(db.String)
-    upvotes = db.Column(db.Integer)
-    downvotes = db.Column(db.Integer)
-    user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
-    posted = db.Column(db.DateTime, default=datetime.utcnow)
+# class Pitch(db.Model):
+#     '''
+#     Defining a pitch
+#     '''
+#     __tablename__ = 'pitches'
+#     id = db.Column(db.Integer, primary_key=True)
+#     title = db.Column(db.String)
+#     body = db.Column(db.String)
+#     author = db.Column(db.String)
+#     category = db.Column(db.String)
+#     upvotes = db.Column(db.Integer)
+#     downvotes = db.Column(db.Integer)
+#     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
+#     posted = db.Column(db.DateTime, default=datetime.utcnow)
 
-    def save_pitches(self):
-        db.session.add(self)
-        db.session.commit()
+#     def save_pitches(self):
+#         db.session.add(self)
+#         db.session.commit()
 
-    @classmethod
-    def get_pitches(cls):
-        pitches = Pitch.query.all()
-        return pitches
+#     @classmethod
+#     def get_pitches(cls):
+#         pitches = Pitch.query.all()
+#         return pitches
 
-    @classmethod
-    def get_categories(cls, category):
-        pitch_cat = Pitch.query.filter_by(category=category)
-        return pitch_cat
+#     @classmethod
+#     def get_categories(cls, category):
+#         pitch_cat = Pitch.query.filter_by(category=category)
+#         return pitch_cat
 
-    all_pitches = []
+#     all_pitches = []
 
-    def __init__(self,title,body,author,category,upvotes,downvotes,users):
-        self.title = title
-        self.body = body
-        self.author = author
-        self.category = category
-        self.upvotes = upvotes
-        self.downvotes = downvotes
-        self.users = users
+#     def __init__(self,title,body,author,category,upvotes,downvotes,users):
+#         self.title = title
+#         self.body = body
+#         self.author = author
+#         self.category = category
+#         self.upvotes = upvotes
+#         self.downvotes = downvotes
+#         self.users = users
 
 class Comment(db.Model):
     '''
