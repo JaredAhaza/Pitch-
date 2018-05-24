@@ -16,8 +16,8 @@ class CommentForm(FlaskForm):
     comment = TextAreaField('comment', validators=[Required()])
     submit = SubmitField('Submit')
 
-# class Vote(FlaskForm):
-#     rating = RadioField('Rate this pitch', choices=[('upvote','upvote'), ('downvote','downvote')],validators=[Required()])
+class Vote(FlaskForm):
+    rating = RadioField('Rate this pitch', choices=[('upvote','upvote'), ('downvote','downvote')],validators=[Required()])
 
 
 class UpdateProfile(FlaskForm):
