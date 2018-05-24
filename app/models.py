@@ -71,33 +71,33 @@ class Pitch(db.Model):
         self.downvotes = downvotes
         self.users = users
 
-class Comment(db.Model):
-    '''
-    defining pitch object
-    '''
-    __tablename__= 'comments'
+# class Comment(db.Model):
+#     '''
+#     defining pitch object
+#     '''
+#     __tablename__= 'comments'
 
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String)
-    comment = db.Column(db.String)
-    user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
+#     id = db.Column(db.Integer, primary_key=True)
+#     title = db.Column(db.String)
+#     comment = db.Column(db.String)
+#     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
 
-    def save_comment(self):
-        db.session.add(self)
-        db.session.commit()
+#     def save_comment(self):
+#         db.session.add(self)
+#         db.session.commit()
 
-    @classmethod
-    def get_comments(cls):
-        comments = Comment.query.all()
-        return comments
+#     @classmethod
+#     def get_comments(cls):
+#         comments = Comment.query.all()
+#         return comments
 
-    all_comments = []
+#     all_comments = []
 
-    def __init__(self,title,comment,user):
-        self.title = title
-        self.comment = comment
-        self.user = user
+#     def __init__(self,title,comment,user):
+#         self.title = title
+#         self.comment = comment
+#         self.user = user
 
-@login_manager.user_loader
-def load_user(user_id):
-    return User.query.get(int(user_id))
+# @login_manager.user_loader
+# def load_user(user_id):
+#     return User.query.get(int(user_id))
