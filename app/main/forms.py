@@ -11,10 +11,10 @@ class PitchForm(FlaskForm):
 
 
 
-# class CommentForm(FlaskForm):
-#     title = StringField('title', validators=[Required()])
-#     comment = TextAreaField('comment', validators=[Required()])
-#     submit = SubmitField('Submit')
+class CommentForm(FlaskForm):
+    title = StringField('title', validators=[Required()])
+    comment = TextAreaField('comment', validators=[Required()])
+    submit = SubmitField('Submit')
 
 class Vote(FlaskForm):
     rating = RadioField('Rate this pitch', choices=[('upvote','upvote'), ('downvote','downvote')],validators=[Required()])
