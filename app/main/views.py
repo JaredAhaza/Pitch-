@@ -29,7 +29,7 @@ def business():
     '''
     function that renders the category wired and its functions
     '''
-    wired_pitch = Pitch.query.filter_by(category='wired').all()
+    business_pitch = Pitch.query.filter_by(category='wired').all()
 
     return render_template('business.html', business=business_pitch)
 
