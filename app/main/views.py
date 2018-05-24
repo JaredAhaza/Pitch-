@@ -24,14 +24,14 @@ def wired():
 
     return render_template('wired.html', wired=wired_pitch)
 
-@main.route('/')
-def business():
-    '''
-    function that renders the category wired and its functions
-    '''
-    wired_pitch = Pitch.query.filter_by(category='wired').all()
+# @main.route('/')
+# def business():
+#     '''
+#     function that renders the category wired and its functions
+#     '''
+#     wired_pitch = Pitch.query.filter_by(category='wired').all()
 
-    return render_template('business.html', business=wired_pitch)
+#     return render_template('business.html', business=business_pitch)
 
 
 @main.route('/new', methods=['GET', 'POST'])
