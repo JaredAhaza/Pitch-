@@ -20,5 +20,5 @@ class Vote(FlaskForm):
     rating = RadioField('Rate this pitch', choices=[('upvote','upvote'), ('downvote','downvote')],validators=[Required()])
 
 
-class UpdateProfile(FlaskForm):
-    bio = TextAreaField('Tell us more about you', validators=[Required()])
+# class UpdateProfile(FlaskForm):
+#     bio = TextAreaField('Tell us more about you', validators=[Required()])
