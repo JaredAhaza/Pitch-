@@ -4,9 +4,11 @@ from app.models import Pitch, User
 class TestPitch(unittest.TestCase):
 
     def setUp(self):
-        self.user_James = User(
-            username='James', password='potato', email='james@ms.com')
-        self.new_pitch = Pitch(title='Elevator Pitch Example for an Professional Accountant',body="Test Pitch",author='Improv Andy',category='business',upvotes=1,downvotes=0,user=self.user_James)
+        self.user_Immanuel = User(
+        username='Immanuel', password='potato', email='jared@ms.com')
+        self.new_pitch = Pitch(title='Elevator Pitch Example for an Professional Accountant',
+        body="Test Pitch",author='Improv Andy',category='business',
+        upvotes=1,downvotes=0,user_id=self.user_Immanuel.id)
 
     def tearDown(self):
         Pitch.query.delete()

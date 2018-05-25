@@ -62,14 +62,14 @@ class Pitch(db.Model):
 
     all_pitches = []
 
-    def __init__(self,title,body,author,category,upvotes,downvotes,users):
+    def __init__(self,title,body,author,category,upvotes,downvotes,user_id):
         self.title = title
         self.body = body
         self.author = author
         self.category = category
         self.upvotes = upvotes
         self.downvotes = downvotes
-        self.users = users
+        self.user_id = user_id
 
 class Comment(db.Model):
     '''
