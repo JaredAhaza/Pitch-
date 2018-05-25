@@ -9,7 +9,7 @@ class Config:
     SIMPLEMDE_JS_IIFE = True
     SIMPLE_USE_CDN = True
     UPLOADED_PHOTOS_DEST = 'app/static/photos'
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://jared:postgres@localhost/pitchup'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://immanuel:7007@localhost/pitchup'
 
     @staticmethod
     def init_app(app):
@@ -25,14 +25,14 @@ class TestConfig(Config):
     '''
     Child configyrations with config passed in as a class to test database relationship
     '''
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://jared:postgres@localhost/pitchup'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://immanuel:7007@localhost/pitchup'
 
 
 class DevConfig(Config):
     '''
-    Chuld configurations with config passed in as a class
+    Child configurations with config passed in as a class
     '''
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://jared:postgres@localhost/pitchup'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://immanuel:7007@localhost/pitchup'
     DEBUG = True
 
 
